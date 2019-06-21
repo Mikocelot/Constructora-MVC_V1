@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="empleados.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <title>empleados</title>
+</head>
+<body>
+    <div class="container" >
+            <div class="row " id="aplicacion" >
+                    <div class="grid-container">
+                        <div class="grid-item perfil">
+                            <div>
+                                <img src="icons/skull.png" width="300" alt="">
+                                <h1>Nombre Empleado</h1>
+                                <h4>Puesto</h4>
+                                <hr>
+                                <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Obra</th>
+                                                <th scope="col">Salario</th>
+                                                <th scope="col">Telefono</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr> 
+                                                <td>Obra</td>
+                                                <td>Salario</td>
+                                                <td>Telefono</td>                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                        <div class="grid-item estilo-formulario ">
+                            <div class="container ">
+                                <form action="">
+                                    <div class="row" >
+                                        <div class="grid-item " >
+                                            <input type="text" class="form-control" name="" placeholder="nombre" id="">
+                                        </div>
+                                        <div class="grid-item " >
+                                            <input type="text" class="form-control" name="" placeholder="Apellido Paterno" id="">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row" >
+                                        <div class="grid-item" >
+                                            <input type="text" class="form-control" name="" placeholder="Telefono" id="">
+                                        </div>
+                                        <div class="grid-item" >
+                                                <input type="text" class="form-control" name="" placeholder="Apellido Materno" id="">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row" >
+                                        <div class="grid-item" >
+                                            <input type="text" class="form-control" name="" placeholder="Puesto" id="">
+                                        </div>
+                                        <div class="grid-item">
+                                            <input type="text" class="form-control" name="" placeholder="Direccion" id="">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    
+                                    <div class="row">
+                                        <div class="grid-item">
+                                            <input type="text" class="form-control" name="" placeholder="Correo" id="">
+                                        </div>
+                                        <div class="grid-item" >
+                                            <input type="text" class="form-control" name="" placeholder="Salario" id="">
+                                        </div>
+                                    </div>
+                                    <div class="row" >
+                                        <div class="grid-item" >
+                                            <button class="btn btn-dark" > QR</button>
+                                        </div>
+                                        <div class="grid-item" >
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="customFileLangHTML">
+                                                <label class="custom-file-label" for="customFileLangHTML" data-browse="Foto">Foto Empleado</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item" >
+                                        <select id="sel" class="form-control form-control-xl">
+                                            <option>Small select</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <button type="button"  class="btn btn-primary">Agregar</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="estilo_tabla_em" >
+                        <div class="col" >
+                                <table class=" table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First</th>
+                                            <th scope="col">Last</th>
+                                            <th scope="col">Handle</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                        </div>
+                </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

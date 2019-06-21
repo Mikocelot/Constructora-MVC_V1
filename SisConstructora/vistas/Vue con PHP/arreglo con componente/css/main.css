@@ -1,0 +1,40 @@
+.list-group-item input[type=text] {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* cuando una tarea este completada la va a volver italica tachada y en gris */
+.completado {
+    text-decoration: line-through;
+    font-style: italic;
+    color: gray;
+}
+
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+
+small {
+    font-size:11px;
+}
+
+.avatar {
+    width: 32px;
+    margin-right: 5px;
+    border-radius: 5px;
+}

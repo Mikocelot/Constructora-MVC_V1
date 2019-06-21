@@ -1,0 +1,35 @@
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="estilo-login.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+</head>
+<body background="Icons/fondo-triangulos.jpg" >
+    <div class="container" id="aplicacion" >
+        <form class="formulario" action="Administracion-inicio.html">
+            <div class="row estilo_letras " >
+                    <div class=" col-sm fondo_izquierda">
+                            <h2 align="center" > Constructora <img src="icons/skull.png" width="300" ></h2>
+                        </div>
+                        <div class="col-sm fondo_derecha" >
+                                <div class="form-group ">
+                                    <br>
+                                    <h2 class="" align="center" >Inicio de Secion</h2>
+                                    <br>
+                                    <br>
+                                        <input v-model="nom" class="form-control" type="text" placeholder="Nombre" required >
+                                        <br>
+                                        <input v-model="con" class="form-control" type="text" placeholder="Constraseña" name="" id=""  required>
+                                        <br>
+                                        <button v-if="mostrarboton"  type="submit" class="btn btn-outline-dark form-control" >Inicio de Secion</button>
+                                </div>
+                        </div>
+            </div>
+        </form>
+    </div>
+</body>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="Vue.js" ></script>
+</html>

@@ -1,0 +1,60 @@
+<html lang="en">
+    <head>
+        <title>Arreglo con Componente</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">    
+    </head>  
+<body>
+    <template id="template-tarea">
+            <div class="col-md-12 ">
+                <h2>Listado de tareas</h2>
+                <form  @submit.prevent="agrega(newHomework)" class="form">
+                    <div class="input-group">
+                        <input v-model="newHomework" required type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit" > Añadir tarea </button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="list-group">
+                    <li v-for="(tarea, index) in tareasA" class="list-group-item clearfix">
+                        <!-- se aplicara la clase css cuando el estado de la tarea sea true -->
+                        <p class="lead" v-bind:class="{ completado: tarea.estado}" >
+                            {{ tarea.titulo }}
+                        </p>
+                        <input v-model="tarea.titulo" v-show="edit_tarea === index" @blur="edit_tarea = null , editar(tarea.titulo)" type="text" name="" id="">
+                        <div>
+                            <span class="pull-right">
+                                <button @click="edit_tarea = index" class="btn btn-default btn-ms">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button v-show="edit_tarea === index" @click="edit_tarea = null , editar(tarea.titulo)" class="btn btn-default btn-ms">
+                                    <span class="glyphicon glyphicon-floppy-saved"></span>
+                                </button>
+                                <button @click="tarea.estado = true" class="btn btn-primary btn-ms">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                                <button  @click="tarea.estado = false" class="btn btn-primary btn-ms">
+                                    <span class="glyphicon glyphicon-repeat"></span>
+                                </button>
+                                <button v-on:click="eliminar(index)" class="btn btn-danger btn-ms">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </template>
+
+    <div class="container" id="tareas_">
+        <pre> {{ $data | json}} </pre>
+    <!-- propiedad creada en props le va a pasar los datos de la instancia vue -->
+      <componente-lista :tareas-a="tareasA" ></componente-lista>
+           
+    </div>
+</body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="vue.js" ></script>
+</html>
