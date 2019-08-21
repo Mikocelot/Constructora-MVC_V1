@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,900");
+.normal-container {
+  /* poscion */
+  position: fixed;  
+  height: 10%;
+  width: 40%;
+  /* background-color: red; */
+}
+
+.smile-rating-container {
+  position: absolute;
+  height: 20%; 
+  width: 90%;
+  min-width: 120px;
+  max-width: 500px;
+  margin: auto;
+  /* background-color: blue; */
+  font-family: 'Roboto', sans-serif;
+  top: 10%;
+}
+
+.submit-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* tecto de encargado */
+.rating-label {
+  position: fixed;
+  /* estan el al misma linea */
+  font-size: 15px;
+  text-align: center;
+  flex: 0.50;   /*espacio de las palabras*/
+  /* z-index: 3; */
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(9, 128, 240);
+  padding: 5px;
+  transition: 500ms;
+}
+
+/* color de encargado caundo se selecciona */
+.rating-label:hover, .rating-label:active {
+  color: #e40039;
+}
+/* encargado */
+.rating-label-encargado {
+  /* posicion de encargado */
+  left: 75%;
+  text-align: right;
+  /* padding: 10px; */
+}
+/* administrador */
+.rating-label-admin {
+/* posicion */
+  left: 55%;
+  text-align: left;
+  /* padding: 10px; */
+  color: rgb(9, 128, 240);
+}
+
+.smile-rating-container input {
+  display: none;
+}
+
+/* capsula */
+.toggle-rating-pill {
+  position: fixed;
+  height: 30px;
+  width: 165px;
+  left: 63%;
+  background: #bd1741;
+  border-radius: 500px;
+  transition: all 500ms;
+}
+
+/* cara */
+.smile-rating-toggle {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(30, 70, 3);
+  left: 63%;
+  /* desde empieza cara */
+  border-radius: 500px;
+  transition: all 500ms;
+  z-index: 4;  
+}
+
+ 
+/* administrador es meh */
+
+/* encargado es fun */
+/* .admin:checked ~ .rating-label-admin {
+  color: #ffffff;
+} */
+
+
+
+/* encargado seleccionado */
+/* .encargado:checked ~ .rating-label-encargado {
+  color: #effc45;
+} */
+
+/* .encargado:checked ~ .smile-rating-toggle {
+  left: 73%;
+} */
+
+
+
+/* .encargado:checked ~ .toggle-rating-pill {
+  background-color: #00b9ee;
+} */
+

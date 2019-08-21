@@ -1,0 +1,134 @@
+CREATE DATABASE IF NOT EXISTS BDconstructora;
+USE  BDconstructora;
+
+
+CREATE TABLE usuarios (
+   idusuario int primary key auto_increment not null,
+   login varchar(20) NOT NULL,
+   clave varchar(64) NOT NULL,
+   tipodeusuario varchar(100) NOT NULL,
+   nombre varchar(500) not null,  
+   apellidoP varchar(500) not null,
+   apellidoM varchar(500) not null
+);
+
+create table Obra(
+idobra int primary key auto_increment not null,
+nombreobra varchar (400) not null,
+direccion varchar(500) not null,
+nombre_dueño varchar(500) not null,
+fechadeinicio date not null,
+fechadetermino date not null,
+costofinal decimal(15,2),
+idusuario_fk int ,
+CONSTRAINT fk_obra_usuario FOREIGN KEY(idusuario_fk) REFERENCES usuarios(idusuario)
+ON DELETE SET NULL  ON UPDATE SET NULL
+);
+
+create table Proveedor(
+idproveedor int primary key auto_increment not null,
+nombre_empresa varchar(200) not null,  
+direccion varchar(500) not null,
+telefono char(10) not null,
+correo varchar(100) not null,
+imagen varchar(50) default null 
+);
+
+create table Empleado(
+idempleado int primary key auto_increment not null,
+nombre varchar(500) not null,  
+apellidoP varchar(500) not null,
+apellidoM varchar(500) not null,
+telefono char(10) not null,
+tipodeempleado text not null,
+imagen varchar(50) default null ,
+salario_hora decimal(15,2) not null,
+idobra_fk int ,
+CONSTRAINT fk_empleado_obra FOREIGN KEY(idobra_fk) REFERENCES Obra(idobra)
+ON DELETE SET NULL  ON UPDATE SET NULL
+);
+
+create table Registros(
+idregistro int primary key auto_increment not null,
+FechaRegistro datetime not null,
+hora_entrada datetime not null,
+hora_salida datetime not null,
+idempleado_fk int ,
+CONSTRAINT fk_regis_empl FOREIGN KEY(idempleado_fk) REFERENCES Empleado(idempleado)
+ON DELETE SET NULL  ON UPDATE SET NULL
+);
+
+create table Sueldos(
+idsueldo int primary key auto_increment not null,
+sueldo decimal(15,2) not null,
+horas_Trabajadas int not null,
+fechadepago datetime not null,
+idempleado_fk int,
+CONSTRAINT fk_sueldo_empl FOREIGN KEY(idempleado_fk) REFERENCES Empleado(idempleado)
+ON DELETE NO ACTION  ON UPDATE NO ACTION
+);
+
+
+create table Material_bodega(
+idstock int primary key auto_increment not null,
+codigodebarras varchar (500) not null,
+nombre varchar (500) not null,
+marca varchar (500)not null,
+cantidad_existente int not null,
+unidad_medida varchar (500)not null,
+descripcion_material varchar(500) not null,
+precio decimal(15,2) not null,
+imagen varchar(50) default null 
+);
+
+
+
+Create table MaterialEntrada(
+identrada_mat int primary key auto_increment not null,
+codigodebarras varchar (500) not null,
+nombre varchar (500) not null,
+marca varchar (500)not null,
+cantidad int not null,
+unidad_medida varchar (500)not null,
+descripcion varchar (500) not null,
+precio decimal(15,2) not null,
+total decimal(15,2) not null,
+fecha date not null,
+idprovedor_fk int ,
+idstock_fk int,
+CONSTRAINT fk_entrada_provedor FOREIGN KEY(idprovedor_fk) REFERENCES Proveedor(idproveedor)
+ON DELETE SET NULL  ON UPDATE SET NULL,
+CONSTRAINT fk_entrada FOREIGN KEY(idstock_fk) REFERENCES Material_bodega(idstock)
+ON DELETE SET NULL  ON UPDATE SET NULL
+);
+
+create table MaterialSalida(
+idsalida_material int primary key auto_increment not null,
+total_venta decimal(60,0) NOT NULL,
+fechadeventa datetime not null,
+iduser_fk int ,
+CONSTRAINT fk_salida_user FOREIGN KEY(iduser_fk) REFERENCES usuarios(idusuario)
+ON DELETE SET NULL  ON UPDATE SET NULL
+);
+
+
+create table detalle_salida(
+iddetalle int primary key auto_increment not null,
+precio decimal(15,2) not null,
+cantidad int(11) NOT NULL,
+idbodega_material_fk int ,
+CONSTRAINT fk_salida_bodega FOREIGN KEY(idbodega_material_fk) REFERENCES Material_bodega(idstock)
+ON DELETE SET NULL  ON UPDATE SET NULL
+);
+
+
+
+<!-- 
+administrador
+usuario:luisangel@gmail.com
+contraseña:5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
+  
+Encargado de obra
+usuario:angel@gmail.com
+contraseña:5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
+  

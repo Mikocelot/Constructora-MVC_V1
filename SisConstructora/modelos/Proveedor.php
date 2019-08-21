@@ -1,4 +1,4 @@
-<<?php 
+<?php 
 require ('config/conexion.php');
 
 class Proveedor
@@ -40,11 +40,7 @@ class Proveedor
 		$sql="SELECT * FROM proveedor";
 		return ejecutarConsulta($sql);
 	}
-	public function select()
-	{
-		$sql="SELECT * FROM  categoria where condicion=1";
-		return ejecutarConsulta($sql);
-	}
+	
 }
-}
+
 ?>
